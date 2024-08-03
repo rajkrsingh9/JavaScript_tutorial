@@ -2,8 +2,9 @@ const button=document.querySelectorAll('.button')
 console.log(button);
 const body=document.querySelector('body')
 
+
 button.forEach((button)=>{
-    console.log(button);
+    // console.log(button);
     button.addEventListener('click',function(e){
         // console.log(e);
         console.log(e.target);

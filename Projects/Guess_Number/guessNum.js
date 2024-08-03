@@ -1,5 +1,5 @@
 let randomNum=parseInt(Math.random()*100+1)
-console.log(randomNum);
+// console.log(randomNum);
 const submit=document.querySelector('#subt')
 const userInput=document.querySelector('#guessField')
 let remaining=document.querySelector('.lastResult')
@@ -14,7 +14,7 @@ let numGuess=1
 
 let playGame=true
 
-if(playGame){
+if(playGame){ // whether allowed to play or not
     submit.addEventListener('click', function(e){
         e.preventDefault()
         const guess=parseInt(userInput.value)
@@ -24,7 +24,7 @@ if(playGame){
 
 }
 
-function validateGuess(guess){      
+function validateGuess(guess){     // right input of guess or not  
     if(isNaN(guess) || guess<1 || guess>100){
         alert('Please enter a valid number')
     }
