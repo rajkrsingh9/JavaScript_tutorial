@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Chai Aur Code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // let btn=document.querySelector('#stop')
+    // btn.addEventListener('click',function(e){
+    //     e.preventDefault()
+    //     console.log("hui b")
+    // })
+
+    // yeh 2s ke baad funtion ko run krwayega under setTimeout
+    // #1 tareka 1
+    setTimeout(function(){
+        console.log("Raj")
+    }, 2000)
+
+    // # tareka 2
+    const sayRaj =function(){
+        console.log("Raj Kumar")
+        document.querySelector('h1').innerHTML="hui here hello" // 3 sec baad jb yeh function call hoga
+    }
+
+    const change=setTimeout(sayRaj,3000)
+    document.querySelector('#stop').addEventListener('click',()=>{
+        clearTimeout(change) // WILL NOT LET THE sayRaj to happen
+        console.log("STOPPED");
+    })
+    
+    
+</script>
+</html>

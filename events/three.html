@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai Aur JS</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body> 
+<script>
+    // create to start the interval when we click the start and click stop to stop it
+
+    /** const sayDate=function(str) {
+        console.log(str,"hitesh", Date.now())
+    }
+    let intervalId
+    document.querySelector('#start').addEventListener('click',()=>{
+        intervalId=setInterval(sayDate, 1000, "hi")
+    })
+    document.querySelector('#stop').addEventListener('click',()=>{
+        clearInterval(intervalId)
+    }) **/
+
+    // should change random colors every second after clicking start and stop when clicked stop
+
+    const randomColor = function (){
+        const hex = "0123456789ABCDEF"
+        let color = '#'
+        for(let i=0; i<6;i++){
+            color+=hex[Math.floor(Math.random()*16)]
+        }
+        return color;
+    }
+    let intervalId
+    const startchangeColor= function(){
+
+        intervalId=setInterval(change, 200)
+
+        function change() {
+            document.body.style.backgroundColor=randomColor();
+        }
+    }
+    const stopchangeColor= function(){
+        clearInterval(intervalId)
+        intervalId=null; // efficient code practice
+    }
+
+    document.querySelector('#start').addEventListener('click',
+    startchangeColor)
+    document.querySelector('#stop').addEventListener('click',
+    stopchangeColor)
+
+    
+    
+    
+
+    
+</script>
+</html>
