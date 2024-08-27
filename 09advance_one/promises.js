@@ -79,7 +79,7 @@ async function consumeproFive(){
         console.log(response)
     } catch (error){
         console.log(error);
-        
+         
     }
 }
 
@@ -101,9 +101,13 @@ async function getAlluser() {
 getAlluser()
  */
 
-fetch(https://jsonplaceholder.typicode.com/users)
+fetch('https://jsonplaceholder.typicode.com/users')
     .then((response)=> {
         return response.json()
+    })
+    .then((data)=>{ // yaha await nhi lagega kyuki ek hoga uske baad hi niche wla execute hoga
+        console.log(data);
+        
     })
     .catch((error) => console.log(error))
 
